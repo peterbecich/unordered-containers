@@ -25,8 +25,8 @@ import qualified Data.HashMap.Lazy as HM
 import qualified Data.Map.Lazy as M
 #endif
 import Test.QuickCheck (Arbitrary(..), Property, (==>), (===), forAll, elements)
-import Test.Framework (Test, defaultMain, testGroup)
-import Test.Framework.Providers.QuickCheck2 (testProperty)
+import Test.Tasty (TestTree, defaultMain, testGroup)
+import Test.Tasty.QuickCheck (testProperty)
 #if MIN_VERSION_base(4,8,0)
 import Data.Functor.Identity (Identity (..))
 #endif
@@ -448,8 +448,8 @@ pKeys = (L.sort . M.keys) `eq` (L.sort . HM.keys)
 ------------------------------------------------------------------------
 -- * Test list
 
-tests :: [Test]
-tests =
+tests :: TestTree
+tests = testGroup "All"
     [
     -- Instances
       testGroup "instances"
