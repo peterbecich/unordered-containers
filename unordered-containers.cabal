@@ -30,7 +30,6 @@ tested-with:
    || ==8.2.2
    || ==8.0.2
    || ==7.10.3
-   || ==7.8.4
 
 flag debug
   description:  Enable debug support
@@ -49,7 +48,7 @@ library
     Data.HashSet.Internal
 
   build-depends:
-    base >= 4.7 && < 5,
+    base >= 4.8 && < 5,
     deepseq >= 1.1,
     hashable >= 1.0.1.1 && < 1.4
 
